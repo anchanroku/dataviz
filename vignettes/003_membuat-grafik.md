@@ -505,7 +505,8 @@ plot*. Fungsi yang digunakan untuk hal ini adalah `geom_col()`.
 jabar_road %>% 
   filter(condition == "Good") %>% 
   ggplot(aes(x = district, y = road_length)) +
-  geom_col()
+  geom_col()+
+  theme(axis.text = element_text(angle = 90))
 ```
 
 <img src="003_membuat-grafik_files/figure-gfm/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
@@ -519,7 +520,8 @@ argumen `position = "dodge"` pada fungsi `geom_col()`. Gunakan variabel
 
 ``` r
 ggplot(jabar_road, aes(x = district, y = road_length, fill = condition)) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  theme(axis.text = element_text(angle = 90))
 ```
 
 <img src="003_membuat-grafik_files/figure-gfm/unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
@@ -531,7 +533,8 @@ melakukannya.
 
 ``` r
 ggplot(jabar_road, aes(x = district, y = road_length, fill = condition)) +
-  geom_col()
+  geom_col()+
+  theme(axis.text = element_text(angle = 90))
 ```
 
 <img src="003_membuat-grafik_files/figure-gfm/unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
@@ -543,7 +546,8 @@ fill`.
 
 ``` r
 ggplot(jabar_road, aes(x = district, y = road_length, fill = condition)) +
-  geom_col(position = "fill")
+  geom_col(position = "fill")+
+  theme(axis.text = element_text(angle = 90))
 ```
 
 <img src="003_membuat-grafik_files/figure-gfm/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
@@ -556,7 +560,8 @@ scales::percent)`.
 ``` r
 ggplot(jabar_road, aes(x = district, y = road_length, fill = condition)) +
   geom_col(position = "fill") +
-  scale_y_continuous(labels = scales::percent)
+  scale_y_continuous(labels = scales::percent)+
+  theme(axis.text = element_text(angle = 90))
 ```
 
 <img src="003_membuat-grafik_files/figure-gfm/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
