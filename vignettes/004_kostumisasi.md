@@ -465,11 +465,14 @@ untuk ggplo2. Diantaranya adalah paket hrbrthemes ggpubr dan paket
 ggthemr. Pada modul selanjutnya Anda akan belajar menggunakan salahsatu
 tema dari paket tersebut. Namun sebelumnya, dapatkah Anda menambahkan
 baris kode `facet_warp(~year)` pada plot\_household? Apakah yang akan
-terjadi pada grafik tersebut?
+terjadi pada grafik
+tersebut?
 
 ``` r
+logo3 <- image_read("../data-raw/logo_JR.jpeg") # berkas logo dengan format png atau jpg
 plot_household +
   facet_wrap(~year)
+grid::grid.raster(logo3, x = 0.0, y = 0.0, just = c('left', 'bottom'), height = unit(0.5, 'inches'))
 ```
 
 <img src="004_kostumisasi_files/figure-gfm/facet-plot_household-1.png" style="display: block; margin: auto;" />
