@@ -19,24 +19,24 @@ Sebelum melakukan pembuatan grafik, Anda harus terlebih dahulu mengetahui inform
 
 ```{r explore-iris1}
 iris # mencetak data di konsol
-dim(iris) # ___
-str(iris) # ___
-colnames(iris) # ___
-head(iris) # ___
-tail(iris) # ___
-summary(iris) # ___
+dim(iris) # Retrieve or set the dimension of an object
+str(iris) # Compactly Display the Structure of an Arbitrary R Object
+colnames(iris) # Retrieve or set the row or column names of a matrix-like object
+head(iris) # Return the First of an Object
+tail(iris) # Return the Last Part of an Object
+summary(iris) # Object Summaries
 iris$Sepal.Length # ekstraksi kolom 'Sepal.Length' dari dataset iris. Jalankan help(`[`) untuk membaca dokumentasi
-class(iris$Species) # ___
-length(iris$Petal.Width) # ___
-levels(iris$Species) # ___
-length(levels(iris$Species)) # ___
-unique(iris$Species) # ___
-length(unique(iris$Species)) # ___
-mean(iris$Sepal.Length) # ___
-sd(iris$Sepal.Length) # ___
-median(iris$Sepal.Width) # ___
-sum(iris$Petal.Length) # ___
-cor(iris[, -5]) # ___
+class(iris$Species) # Object Classes
+length(iris$Petal.Width) # Length of an Object
+levels(iris$Species) # Levels Attributes
+length(levels(iris$Species)) # Length of levels attributes
+unique(iris$Species) # Extract Unique Elements
+length(unique(iris$Species)) # Length of unique attributes
+mean(iris$Sepal.Length) # Generic function for the (trimmed) arithmetic mean
+sd(iris$Sepal.Length) # tandard Deviation
+median(iris$Sepal.Width) # Compute the sample median
+sum(iris$Petal.Length) # Sum of Vector Elements
+cor(iris[, -5]) # Correlation, Variance and Covariance (Matrices)
 ```
 
 Selain fungsi-fungsi di atas Anda juga dapat mendapat informasi mengenai dataset dengan menggunakan fungsi `vis_dat()` dari paket `visdat` dan fungsi `skim()` dari paket `skimr`. Pasanglah kedua paket tersebut terlebih dahulu melalui menu **Tools -- Install Packages...** jika Anda belum memasangnya. Perhatikan contoh penggunaan fungsi `vis_dat()` dan `skim()` pada *chunk* berikut!
@@ -56,12 +56,12 @@ skim(typical_data)
 Aktivitas pembuatan grafik tidak dapat dilepaskan dari aktivitas transformasi data. Salah satu paket yang umum digunakan untuk melakukan transformasi data adalah dplyr. Sekarang aktifkanlah paket tersebut dengan cara mengganti bagian ___ dengan jawaban yang tepat! (Catatan: jika Anda belum memasang paket dplyr, pasanglah paket tersebut terlebih dahulu melalui menu **Tools -- Install Packages...**)
 
 ```{r load-package}
-library(___)
+library(dplyr)
 ```
 
 Terdapat beberapa fungsi utama dari paket dplyr untuk melakukan transformasi data, diantaranya:
 
-* `select()`
+* `?select()`
 * `filter()`
 * `arrange()`
 * `mutate()`
@@ -98,10 +98,10 @@ identical(storms_nopipe, storms_pipe) # membandingkan dua dataset, hasilnya TRUE
 
 Buatlah rangkuman tahapan-tahapan apa yang dilakukan untuk melakukan transformasi dataset storms diatas!
 
-1. ___
-2. ___
-3. ___
-4. ___
-5. ___
+1. memilih kolom dengan nama storms, year, month, wind, pressure
+2. filter data yang terjadi antara tahun 2000 sd 2015
+3. merubah bulan yang tadinya angka menjadi text
+4. menghitung rata-rata wind dan pressure
+5. membandingkan dua data set 
 
 Sekarang Anda dipersilahkan klik tombol **Knit** atau menjalankan pemintas **Ctrl + Shift + K** untuk mengkonversi dokumen R Markdown ini menjadi dokumen final (dokumen berekstensi .md). Kemudian silakan unggah hasil kerja Anda ke repositori GitHub dengan cara yang telah ditunjukan oleh instruktur. Setelah berhasil, silakan akses berkas 002_eksplor-transform.md dalam direktori vignettes di repositori GitHub milik Anda tersebut.
